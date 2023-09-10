@@ -2,15 +2,16 @@
 @section('content')
     @php
         $getKls = request()->get('kelas') ?? '';
-        $getSiswa = request()->get('siswa') ?? '';
+        $getSatus = request()->get('status') ?? '';
+        $getNama = request()->get('nama') ?? '';
     @endphp
     <div class="container-fluid p-0">
         <div class="d-flex justify-content-between mb-3">
             <h1 class="h4 mb-3">Siswa</h1>
             <div>
                 <a class="btn btn-inverse-secondary"
-                    href="/laporan/print-siswa?kelas={{ $getKls }}&status={{ $getSiswa }}" id="prints"
-                    target="_blank">
+                    href="/laporan/print-siswa?kelas={{ $getKls }}&status={{ $getSatus }}&nama={{ $getNama }}"
+                    id="prints" target="_blank">
                     <i class="fa fa-print"></i> print</a>
             </div>
         </div>
@@ -19,13 +20,14 @@
             <div class="card-header flex justify-content-between">
                 <div></div>
                 <form action="" class="flex" method="get">
+                    <input class="form-control w-[150px] ml-1 mr-1" id="nama" name="nama" />
                     <select class="form-select ml-1 mr-1" id="kelas_id" name="kelas">
                         <option disabled selected value="">Pilih Kelas</option>
                         @foreach ($kelas as $kls)
                             <option value="{{ $kls->id }}">{{ $kls->nama_kelas }}</option>
                         @endforeach
                     </select>
-                    <select class="form-select w-[150px] ml-1 mr-1" id="kelas_id" name="status" name="kelas_id">
+                    <select class="form-select w-[150px] ml-1 mr-1" id="status" name="status">
                         <option disabled selected value="">Status Siswa</option>
                         <option value="aktif">Aktif</option>
                         <option value="alumni">Alumni</option>
@@ -47,6 +49,7 @@
                             <th scope="col">No</th>
                             <th scope="col">Nama Siswa</th>
                             <th scope="col">Nomor Induk</th>
+                            <th scope="col">Kelas</th>
                             <th scope="col">Panggilan</th>
                             <th scope="col">Tempat Lahir</th>
                             <th scope="col">Tanggal Lahir</th>
@@ -61,7 +64,6 @@
                             <th scope="col">Tanggal Masuk</th>
                             <th scope="col">Kepala Sekolah</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -71,6 +73,7 @@
                                 <td>{{ $no++ }}</td>
                                 <td>{{ $s->nama_siswa }}</td>
                                 <td>{{ $s->nomor_induk }}</td>
+                                <td>{{ $s->kelas->nama_kelas }}</td>
                                 <td>{{ $s->panggilan }}</td>
                                 <td>{{ $s->tempat_lahir }}</td>
                                 <td>{{ $s->tanggal_lahir }}</td>
@@ -85,19 +88,6 @@
                                 <td>{{ $s->tanggal_masuk }}</td>
                                 <td>{{ $s->kepala_sekolah }}</td>
                                 <td>{{ $s->status }}</td>
-                                <td>
-                                    <div class="flex justify-center items-center">
-                                        <a class="w-9 h-9 ml-1 mr-1 flex items-center justify-center rounded-full bg-green-500 text-white hover:bg-green-600 focus:outline-none focus:ring focus:ring-green-300"
-                                            href="{{ route('siswa.edit', ['id' => $s->id]) }}">
-                                            <i class="fa fa-edit"></i>
-                                        </a>
-                                        <a class="w-9 h-9 ml-1 mr-1 flex items-center justify-center rounded-full bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300"
-                                            href="{{ route('siswa.destroy', ['id' => $s->id]) }}">
-                                            <i class="fa fa-trash"></i>
-                                        </a>
-
-                                    </div>
-                                </td>
                             </tr>
                         @endforeach
                     </tbody>

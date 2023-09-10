@@ -74,10 +74,10 @@ class NilaiController extends Controller
 
         $absensi = new AbsensiSiswa();
         $absensi->nilai_id = $nilai->id;
-        $absensi->izin = $request->input('nilai');
-        $absensi->sakit = $request->input('nilai');
-        $absensi->tanpa_keterangan = $request->input('nilai');
-        $absensi->keterangan = $request->input('nilai');
+        $absensi->izin = $request->input('izin');
+        $absensi->sakit = $request->input('sakit');
+        $absensi->tanpa_keterangan = $request->input('tanpa_keterangan');
+        $absensi->keterangan = $request->input('keterangan');
 
         $absensi->save();
 

@@ -2,36 +2,31 @@
 @section('content')
     @php
         $getKls = request()->get('kelas') ?? '';
-        $getSatus = request()->get('status') ?? '';
-        $getNama = request()->get('nama') ?? '';
+        $getSemester = request()->get('semester') ?? '';
     @endphp
     <div class="container-fluid p-0">
         <div class="d-flex justify-content-between mb-3">
-            <h1 class="h4 mb-3">Siswa</h1>
-            <div>
-                <a class="btn btn-inverse-secondary"
-                    href="/laporan/print-siswa?kelas={{ $getKls }}&status={{ $getSatus }}&nama={{ $getNama }}"
-                    id="prints" target="_blank">
-                    <i class="fa fa-print"></i> print</a>
-            </div>
+            <h1 class="h4 mb-3">Nilai {{ $siswa->nama_siswa }}</h1>
+            <a class="btn btn-inverse-secondary"
+                href="/laporan/{{ $siswa->id }}/print-nilai?kelas={{ $getKls }}&semester={{ $getSemester }}"
+                id="prints" target="_blank">
+                <i class="fa fa-print"></i> print</a>
         </div>
         <div class="row" id="read"></div>
-        <div class="card">
+        <divc class="card">
             <div class="card-header flex justify-content-between">
                 <div></div>
                 <form action="" class="flex" method="get">
-                    <input class="form-control w-[150px] ml-1 mr-1" id="nama" name="nama" />
                     <select class="form-select ml-1 mr-1" id="kelas_id" name="kelas">
                         <option disabled selected value="">Pilih Kelas</option>
                         @foreach ($kelas as $kls)
-                            <option value="{{ $kls->id }}">{{ $kls->nama_kelas }}</option>
+                            <option value="{{ $kls->id }}">Kelas {{ $kls->nama_kelas }}</option>
                         @endforeach
                     </select>
-                    <select class="form-select w-[150px] ml-1 mr-1" id="status" name="status">
-                        <option disabled selected value="">Status Siswa</option>
-                        <option value="aktif">Aktif</option>
-                        <option value="alumni">Alumni</option>
-                        <option value="berhenti">Berhenti</option>
+                    <select class="form-select  w-[150px]" id="semester" name="semester">
+                        <option disabled selected value="">Pilih Semester</option>
+                        <option value="I">Semester I</option>
+                        <option value="II">Semester II</option>
                     </select>
                     <div>
                         <button
@@ -43,37 +38,44 @@
                 </form>
             </div>
             <div class="card-body">
-                <table class="table" id="tables">
+                <table class="table table-bordered" id="tables">
                     <thead>
                         <tr class="table-primary">
                             <th scope="col">No</th>
-                            <th scope="col">Nama Siswa</th>
-                            <th scope="col">Nomor Induk</th>
+                            <th scope="col">Mata Pelajaran</th>
+                            <th scope="col">Guru</th>
+                            <th scope="col">Siswa</th>
                             <th scope="col">Kelas</th>
-                            <th scope="col">Status</th>
-                            <th></th>
+                            <th scope="col">Semester</th>
+                            <th scope="col">Izin</th>
+                            <th scope="col">Sakit</th>
+                            <th scope="col">Tanpa Keterangan</th>
+                            <th scope="col">Keterangan</th>
+                            <th scope="col">Nilai</th>
                         </tr>
                     </thead>
                     <tbody>
                         @php $no = 1; @endphp
-                        @foreach ($siswa as $s)
+                        @foreach ($nilai as $s)
                             <tr>
                                 <td>{{ $no++ }}</td>
-                                <td>{{ $s->nama_siswa }}</td>
-                                <td>{{ $s->nomor_induk }}</td>
+                                <td>{{ $s->mataPelajaran->nama_matapel }}</td>
+                                <td>{{ $s->guru->nama }}</td>
+                                <td>{{ $s->siswa->nama_siswa }}</td>
                                 <td>{{ $s->kelas->nama_kelas }}</td>
-                                <td>{{ $s->status }}</td>
-                                <td>
-                                    <a class="btn btn-info btn-sm upFile"
-                                        href="{{ route('laporan-nilai', ['id' => $s->id]) }}">
-                                        Lihat Nilai</a>
-                                </td>
+                                <td>{{ $s->semester }}</td>
+                                <td>{{ $s->absensi->izin }}</td>
+                                <td>{{ $s->absensi->sakit }}</td>
+                                <td>{{ $s->absensi->tanpa_keterangan }}</td>
+                                <td>{{ $s->absensi->keterangan }}</td>
+                                <td>{{ $s->nilai }}</td>
                             </tr>
                         @endforeach
                     </tbody>
                 </table>
+
             </div>
-        </div>
+        </divc>
     </div>
 @endsection
 @section('script')

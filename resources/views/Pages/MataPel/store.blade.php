@@ -67,7 +67,7 @@
                         <div class="col-6 mb-3">
                             <label class="form-label" for="status">Status</label>
                             <select class="form-select" id="status" name="status" required>
-                                <option disabled selected value="">Pilih Semester</option>
+                                <option disabled selected value="">Pilih Status</option>
                                 <option value="Active">Sedang berjalan</option>
                                 <option value="inActive">Sudah Lewat</option>
                             </select>

@@ -18,12 +18,12 @@
                 <span class="menu-title">Operator</span>
             </a>
         </li>
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link" href="3">
                 <i class="ti-desktop menu-icon"></i>
                 <span class="menu-title">Sisfo Sekolah</span>
             </a>
-        </li>
+        </li> --}}
         <li class="nav-item">
             <a aria-controls="ui-basic" aria-expanded="false" class="nav-link" data-toggle="collapse" href="#ui-basic">
                 <i class="ti-zip menu-icon"></i>
@@ -60,7 +60,7 @@
             <div class="collapse" id="ui-siswa">
                 <ul class="nav flex-column sub-menu">
                     <li class="nav-item"> <a class="nav-link" href="/laporan/siswa">Laporan Siswa</a></li>
-
+                    <li class="nav-item"> <a class="nav-link" href="/laporan/siswa-nilai">Laporan Nilai</a></li>
                 </ul>
             </div>
         </li>
@@ -70,6 +70,6 @@
                 <span class="menu-title">Log Out</span>
             </a>
         </li>
-       
+
     </ul>
 </nav>
