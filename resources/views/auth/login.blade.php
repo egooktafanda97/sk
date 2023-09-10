@@ -146,8 +146,8 @@
         <div class="shape"></div>
         <div class="shape"></div>
     </div>
-    <form action="/auth/login" method="post">
-        @csrf
+    <form action="{{ route('postlogin') }}" method="POST">
+        {{ csrf_field() }}
 
         <h3>Login</h3>
 
@@ -157,7 +157,9 @@
         <label for="password">Password</label>
         <input id="password" name="password" placeholder="Password" type="password">
 
-        <button>Log In</button>
+        <div class="col-4">
+            <button class="btn btn-primary btn-block" type="submit">Sign In</button>
+        </div>
 
     </form>
 </body>

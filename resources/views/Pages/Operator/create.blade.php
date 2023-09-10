@@ -37,8 +37,10 @@
                         <input class="form-control" id="agama" name="agama" required type="text">
                     </div>
                 </div>
-                <button class="btn btn-primary" type="submit">Submit</button>
-                <button class="btn btn-secondary" onClick="cancel()" type="button">Batal</button>
+    
+
+                <button class="btn btn-primary bg-blue-500" type="submit">Submit</button>
+                <button class="btn btn-secondary bg-gray-500" onClick="cancel()" type="button">Batal</button>
             </form>
         </div>
     </div>
