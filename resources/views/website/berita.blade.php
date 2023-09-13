@@ -33,10 +33,10 @@
         <div class="row g-5">
             <!-- Blog list Start -->
             <div class="col-lg-12">
-                <div class="row g-5">
+                <div class="row g-5 wow slideInUp mb-5">
                     @foreach ($result as $item)
-                        <div class="col-md-6 wow slideInUp mb-5" data-wow-delay="0.1s">
-                            <div class="blog-item bg-light rounded overflow-hidden">
+                        {{-- <div class="col-md-6 wow slideInUp mb-5" data-wow-delay="0.1s"> --}}
+                            <div class="blog-item  rounded overflow-hidden">
                                 {{-- <div class="blog-img position-relative overflow-hidden">
                                     <img class="img-fluid" src="img/berita-1.jpg" alt="">
                                     <a class="position-absolute top-0 start-0 bg-primary text-white rounded-end mt-5 py-2 px-4"
@@ -47,7 +47,7 @@
                                         <small><i
                                                 class="far fa-calendar-alt text-primary me-2"></i>{{ $item->created_at }}</small>
                                     </div>
-                                    <h2 class="mb-3">{{$item->judul}}</h2>
+                                    <h1 class="mb-3">{{$item->judul}}</h1>
                                     {{-- <p>Dolor et eos labore stet justo sed est sed sed sed dolor stet amet</p> --}}
                                     {{-- <a class="text-uppercase" href="{{ url('berita/beritaview/' . $item->id) }}">Read More <i
                                             class="bi bi-arrow-right"></i></a> --}}
@@ -57,7 +57,7 @@
 
 
                                 </div>
-                            </div>
+                            {{-- </div> --}}
                         </div>
                     @endforeach
 
