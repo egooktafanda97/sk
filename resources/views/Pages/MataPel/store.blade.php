@@ -2,7 +2,7 @@
 @section('content')
     <div class="container-fluid p-0">
         <div class="d-flex justify-content-between mb-3">
-            <h1 class="h4 mb-3">Form Input Siswa</h1>
+            <h1 class="h4 mb-3">Form Input Mata Pelaljran</h1>
         </div>
         <div class="row" id="read"></div>
         <div class="card">
@@ -13,9 +13,12 @@
                         <div class="col-6 mb-3">
                             <label class="form-label" for="guru_id">Guru</label>
                             <select class="form-select text-gray-900" id="guru_id" name="guru_id" required>
-                                <option disabled selected value="">Pilih Guru</option>
+                                <option disabled selected value="">
+                                    Pilih Guru</option>
                                 @foreach ($guru as $gx)
-                                    <option value="{{ $gx->id }}">{{ $gx->nama }}</option>
+                                    <option
+                                        {{ auth()->user()->role == 'guru' ? (\App\Models\Guru::whereUserId(auth()->user()->id)->first()->id == $gx->id ? 'selected' : '') : '' }}
+                                        value="{{ $gx->id }}">{{ $gx->nama }}</option>
                                 @endforeach
                             </select>
                         </div>

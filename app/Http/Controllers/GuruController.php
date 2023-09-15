@@ -29,6 +29,7 @@ class GuruController extends Controller
         $user->name = $request->input('nama');
         $user->email = $request->input('email'); // Atur email sesuai kebutuhan
         $user->password = bcrypt($request->input('password')); // Anda dapat mengenkripsi password sesuai kebutuhan
+        $user->role = 'guru';
         $user->save();
 
         // Membuat guru dan menghubungkannya dengan pengguna
