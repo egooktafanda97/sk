@@ -1,6 +1,6 @@
 <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
     <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html">Sisfo SDIT</a>
+        <a class="navbar-brand brand-logo mr-5 " href="index.html">&nbsp;&nbsp;&nbsp;<span class="h1 text-center">Sisfo SDIT</span></a>
         <a class="navbar-brand brand-logo-mini" href="index.html"><span class="h6">Sisfo SDIT</span></a>
     </div>
     <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
