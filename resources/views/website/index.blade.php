@@ -8,8 +8,8 @@
                     <div class="row mb-5">
                         <div class="col-xl-6 col-lg-6 col-md-6">
                             <div class="hero__caption hero__caption2 ">
-                                <h1 data-animation="fadeInLeft" data-delay="0.2s">Sekolah Dasar<br> Islam Terpadu</h1>
-                               
+                                <h1 data-animation="fadeInLeft" data-delay="0.2s">SEKOLAH DASAR<br> ISLAM TERPADU</h1>
+
                                 {{-- <div class="btn hero-btn" id="galeri" data-animation="fadeInLeft"
                                     data-delay="0.7s">Galeri</div> --}}
 
@@ -19,29 +19,29 @@
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6">
                             <div class="hero__caption hero__caption2 mb-5">
-                                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                                <div class="carousel slide" data-ride="carousel" id="carouselExampleControls">
                                     <div class="carousel-inner">
                                         <div class="carousel-item active">
-                                            <img fluid class="d-block w-100"
-                                                src="{{ asset('landing-page') }}/assets/img/sdit/1.png" alt="First slide">
+                                            <img alt="First slide" class="d-block w-100" fluid
+                                                src="{{ asset('landing-page') }}/assets/img/sdit/1.png">
                                         </div>
                                         <div class="carousel-item">
-                                            <img fluid class="d-block w-100"
-                                                src="{{ asset('landing-page') }}/assets/img/sdit/4.png" alt="Second slide">
+                                            <img alt="Second slide" class="d-block w-100" fluid
+                                                src="{{ asset('landing-page') }}/assets/img/sdit/4.png">
                                         </div>
                                         <div class="carousel-item">
-                                            <img fluid class="d-block w-100"
-                                                src="{{ asset('landing-page') }}/assets/img/sdit/2.png" alt="Third slide">
+                                            <img alt="Third slide" class="d-block w-100" fluid
+                                                src="{{ asset('landing-page') }}/assets/img/sdit/2.png">
                                         </div>
                                     </div>
-                                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button"
-                                        data-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <a class="carousel-control-prev" data-slide="prev" href="#carouselExampleControls"
+                                        role="button">
+                                        <span aria-hidden="true" class="carousel-control-prev-icon"></span>
                                         <span class="sr-only">Previous</span>
                                     </a>
-                                    <a class="carousel-control-next" href="#carouselExampleControls" role="button"
-                                        data-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <a class="carousel-control-next" data-slide="next" href="#carouselExampleControls"
+                                        role="button">
+                                        <span aria-hidden="true" class="carousel-control-next-icon"></span>
                                         <span class="sr-only">Next</span>
                                     </a>
                                 </div>
@@ -68,7 +68,7 @@
                     <div class="right-content2">
                         <!-- img -->
                         <div class="right-img">
-                            <img src="{{ asset('landing-page') }}/assets/img/sdit/3.png" alt="">
+                            <img alt="" src="{{ asset('landing-page') }}/assets/img/sdit/3.png">
                         </div>
                     </div>
                     <div class="left-content2">
@@ -76,9 +76,14 @@
                         <div class="section-tittle section-tittle2 mb-20">
                             <div class="front-text">
                                 <h2 class="">Sekolah Dasar Islam Terpadu (SDIT) Teluk Kuantan</h2>
-                                <p>Sekolah Dasar Islam Terpadu (SDIT) Teluk Kuantan merupakan jenjang pendidikan bagi anak usia 6-12 tahun di bawah koordinisasi pendidikan dan mengimplementasikan kurikulum tambahan berupa pendidikan agama islam yang berlebih dari SD umum. Kurikulum tersebut disesuaikan dengan mempertimbangkan kemampuan, kebutuhan dan kondisi keagamaan masyarakat saat ini berlokasi dan melaksanakan kegiatan belajar mengajar (KBM) di Desa Beringin Teluk Kuantan. 
+                                <p>Sekolah Dasar Islam Terpadu (SDIT) Teluk Kuantan merupakan jenjang pendidikan bagi anak
+                                    usia 6-12 tahun di bawah koordinisasi pendidikan dan mengimplementasikan kurikulum
+                                    tambahan berupa pendidikan agama islam yang berlebih dari SD umum. Kurikulum tersebut
+                                    disesuaikan dengan mempertimbangkan kemampuan, kebutuhan dan kondisi keagamaan
+                                    masyarakat saat ini berlokasi dan melaksanakan kegiatan belajar mengajar (KBM) di Desa
+                                    Beringin Teluk Kuantan.
                                 </p>
-                                <a href="/about" class="btn">Read More</a>
+                                <a class="btn" href="/about">Read More</a>
                             </div>
                         </div>
                     </div>
@@ -99,52 +104,52 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <img src="{{ asset('landing-page') }}/assets/img/sdit/3.png"
-                    class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+                    <img alt="Boat on Calm Water" class="w-100 shadow-1-strong rounded mb-4"
+                        src="{{ asset('landing-page') }}/assets/img/sdit/3.png" />
 
-                    <img src="{{ asset('landing-page') }}/assets/img/sdit/5.png"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape" />
+                    <img alt="Wintry Mountain Landscape" class="w-100 shadow-1-strong rounded mb-4"
+                        src="{{ asset('landing-page') }}/assets/img/sdit/5.png" />
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="{{ asset('landing-page') }}/assets/img/sdit/6.png"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds" />
+                    <img alt="Mountains in the Clouds" class="w-100 shadow-1-strong rounded mb-4"
+                        src="{{ asset('landing-page') }}/assets/img/sdit/6.png" />
 
-                        <img src="{{ asset('landing-page') }}/assets/img/sdit/7.png"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+                    <img alt="Boat on Calm Water" class="w-100 shadow-1-strong rounded mb-4"
+                        src="{{ asset('landing-page') }}/assets/img/sdit/7.png" />
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="{{ asset('landing-page') }}/assets/img/sdit/8.png"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+                    <img alt="Waves at Sea" class="w-100 shadow-1-strong rounded mb-4"
+                        src="{{ asset('landing-page') }}/assets/img/sdit/8.png" />
 
-                        <img src="{{ asset('landing-page') }}/assets/img/sdit/9.png"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+                    <img alt="Yosemite National Park" class="w-100 shadow-1-strong rounded mb-4"
+                        src="{{ asset('landing-page') }}/assets/img/sdit/9.png" />
                 </div>
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <img src="{{ asset('landing-page') }}/assets/img/sdit/10.png"
-                    class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+                    <img alt="Boat on Calm Water" class="w-100 shadow-1-strong rounded mb-4"
+                        src="{{ asset('landing-page') }}/assets/img/sdit/10.png" />
 
-                    <img src="{{ asset('landing-page') }}/assets/img/sdit/11.png"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape" />
+                    <img alt="Wintry Mountain Landscape" class="w-100 shadow-1-strong rounded mb-4"
+                        src="{{ asset('landing-page') }}/assets/img/sdit/11.png" />
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="{{ asset('landing-page') }}/assets/img/sdit/12.png"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds" />
+                    <img alt="Mountains in the Clouds" class="w-100 shadow-1-strong rounded mb-4"
+                        src="{{ asset('landing-page') }}/assets/img/sdit/12.png" />
 
-                        <img src="{{ asset('landing-page') }}/assets/img/sdit/13.png"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+                    <img alt="Boat on Calm Water" class="w-100 shadow-1-strong rounded mb-4"
+                        src="{{ asset('landing-page') }}/assets/img/sdit/13.png" />
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="{{ asset('landing-page') }}/assets/img/sdit/14.png"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+                    <img alt="Waves at Sea" class="w-100 shadow-1-strong rounded mb-4"
+                        src="{{ asset('landing-page') }}/assets/img/sdit/14.png" />
 
-                        <img src="{{ asset('landing-page') }}/assets/img/sdit/15.png"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
-                        <img src="{{ asset('landing-page') }}/assets/img/sdit/16.png"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+                    <img alt="Yosemite National Park" class="w-100 shadow-1-strong rounded mb-4"
+                        src="{{ asset('landing-page') }}/assets/img/sdit/15.png" />
+                    <img alt="Yosemite National Park" class="w-100 shadow-1-strong rounded mb-4"
+                        src="{{ asset('landing-page') }}/assets/img/sdit/16.png" />
                 </div>
             </div>
         </div>
