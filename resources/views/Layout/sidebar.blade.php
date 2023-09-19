@@ -6,18 +6,20 @@
                 <span class="menu-title">Dashboard</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/news">
-                <i class="ti-write menu-icon"></i>
-                <span class="menu-title">Berita</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="/operator">
-                <i class="ti-user menu-icon"></i>
-                <span class="menu-title">Operator</span>
-            </a>
-        </li>
+        @if (auth()->user()->role != 'guru')
+            <li class="nav-item">
+                <a class="nav-link" href="/news">
+                    <i class="ti-write menu-icon"></i>
+                    <span class="menu-title">Berita</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/operator">
+                    <i class="ti-user menu-icon"></i>
+                    <span class="menu-title">Operator</span>
+                </a>
+            </li>
+        @endif
         {{-- <li class="nav-item">
             <a class="nav-link" href="3">
                 <i class="ti-desktop menu-icon"></i>
