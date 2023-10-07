@@ -147,11 +147,13 @@ Route::group([
     'prefix' => "siswa"
 ], function ($router) {
     Route::get('/', [\App\Http\Controllers\SiswaController::class, 'index'])->name('siswa.index');
+    Route::get('/alumni', [\App\Http\Controllers\SiswaController::class, 'alumni'])->name('siswa.alumni');
     Route::get('/create', [\App\Http\Controllers\SiswaController::class, 'create'])->name('siswa.create');
     Route::post('/store', [\App\Http\Controllers\SiswaController::class, 'store'])->name('siswa.store');
     Route::get('/{id}/edit', [\App\Http\Controllers\SiswaController::class, 'edit'])->name('siswa.edit');
     Route::put('/{id}/update', [\App\Http\Controllers\SiswaController::class, 'update'])->name('siswa.update');
     Route::get('/{id}/destroy', [\App\Http\Controllers\SiswaController::class, 'destroy'])->name('siswa.destroy');
+    Route::post('/update-kelas', [\App\Http\Controllers\SiswaController::class, 'updateKelas'])->name('siswa.updateKelas');
 });
 
 Route::group([

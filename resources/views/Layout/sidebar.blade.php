@@ -37,6 +37,7 @@
                 <div class="collapse" id="ui-basic">
                     <ul class="nav flex-column sub-menu">
                         <li class="nav-item"> <a class="nav-link" href="/siswa">Data Siswa</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="/siswa/alumni">Data Alumni</a></li>
                         <li class="nav-item"> <a class="nav-link" href="/guru">Data Guru & Staff</a></li>
                         <li class="nav-item"> <a class="nav-link" href="/data-ijazah">Data Ijazah</a>
                         </li>

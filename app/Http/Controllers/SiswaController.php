@@ -9,10 +9,23 @@ use App\Models\User;
 
 class SiswaController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $siswa = Siswa::query()->get();
-        return view('Pages.Siswa.indexSiswa', compact('siswa'));
+
+
+        $siswa = Siswa::query()->where("status", "aktif")->get();
+        if (!empty($request->get("kelas")))
+            $siswa = Siswa::query()->where("status", "aktif")
+                ->where("kelas_id", $request->get("kelas"))
+                ->get();
+        $kelas = Kelas::query()->get();
+        return view('Pages.Siswa.indexSiswa', compact('siswa', 'kelas'));
+    }
+    public function alumni()
+    {
+        $siswa = Siswa::query()->where("status", "alumni")->get();
+
+        return view('Pages.DataAlumni.indexSiswa', compact('siswa'));
     }
 
     public function create()
@@ -56,6 +69,28 @@ class SiswaController extends Controller
         $kelas = Kelas::all();
 
         return view('Pages.Siswa.edit', compact('siswa', 'kelas'));
+    }
+
+    public function updateKelas(Request $request)
+    {
+        try {
+            $req = $request->all();
+
+            $inData = $request->input("data");
+            foreach ($inData as $key => $value) {
+                if ($request->input("kelas") == 'lulus')
+                    Siswa::where("id", $value)->update([
+                        "status" => 'alumni'
+                    ]);
+                else
+                    Siswa::where("id", $value)->update([
+                        "kelas_id" => $request->input("kelas")
+                    ]);
+            }
+            return response()->json(true);
+        } catch (\Throwable $th) {
+            return response()->json(false, 500);
+        }
     }
 
     public function update(Request $request, $id)
